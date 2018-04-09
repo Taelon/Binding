@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         
             
@@ -38,6 +39,9 @@
                            FontWeight="Bold"
                            Margin="16,16,0,0"/>
             </StackPanel>
+
+                <Button Content="Save Title" Grid.Row="2"/>
+ 
         </GridView>
     </Grid>
 </Page>

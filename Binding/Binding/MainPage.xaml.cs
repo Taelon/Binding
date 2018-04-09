@@ -13,6 +13,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Binding.Models;
+using SQLite.Net;
+using SQLite.Net.Attributes;
+
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,9 +27,11 @@ namespace Binding
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        SQLiteConnection conn;
         private List<Albums> Albums;
         private Albums album;
         private string path;
+
         public MainPage()
         {
             this.InitializeComponent();

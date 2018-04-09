@@ -5,9 +5,39 @@
     xmlns:local="using:Binding"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Binding.Models"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        
+            
+            <GridView ItemsSource="{x:Bind Albums}">
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="data:Albums">
+                    <StackPanel>
+                        <Image Width="150" Source="{x:Bind CoverImage}" />
+                        <TextBlock FontSize="12" Text="{x:Bind Title}"/>
+                        <TextBlock FontSize="10" Text="{x:Bind Artist}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
 
+            <StackPanel VariableSizedWrapGrid.RowSpan="1" Orientation="Horizontal">
+                <TextBlock Name="TitleText" 
+                           FontSize="14"
+                           Foreground="Red"
+                           FontWeight="Bold"
+                           Margin="16,16,0,0"/>
+                <TextBlock Name="ArtistText" 
+                           FontSize="14"
+                           Foreground="Red"
+                           FontWeight="Bold"
+                           Margin="16,16,0,0"/>
+            </StackPanel>
+        </GridView>
     </Grid>
 </Page>
